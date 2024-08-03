@@ -1,0 +1,169 @@
+body{
+    background: radial-gradient(circle, #4169E1, #000080);
+}
+.centering{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.addButton{
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin-right: 5px;
+}       
+.todoName{
+    padding: 1.2rem 0rem 1.2rem 1rem;
+    width: 45%;
+}
+.todoNamebox{
+    width: 286px;
+    overflow: hidden;   
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;  
+}
+.todoDate{
+    padding: 1.1rem;
+}
+.iBox{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.oBox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+.entryBox{
+    width: 60%;
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #d4fc79, #96e6a1) 1;
+    padding: 1rem;
+    background-color: #112D4E;
+    color: #F9F7F7;
+}
+.addButton{
+    background-color: #006769;
+    border: solid 2px #E0FBE2;
+    color: #F9F7F7;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color .3s, border .3s, color .3s;
+}
+.deleteButton{
+    padding:1rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: #E4003A;
+    border: solid 2px #E0FBE2;
+    color: #E0FBE2;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color .3s, border .3s, color .3s;
+}
+.addButton:hover{
+    background-color: #E0FBE2;
+    border: solid 2px #006769;
+    color: #006769;
+}
+.deleteButton:hover{
+    background-color: #E0FBE2;
+    border:solid 2px #E4003A;
+    color: #E4003A;
+}
+h1{
+    text-align: center;
+}
+.mediaDeleteButton,.mediadatebox,.breakline{
+    display: none;
+}
+@media (max-width:667px){
+    .addButton{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .Sno,.deleteButton,.datebox{
+        display: none;
+    }
+    .todoName{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .todoDate{
+        margin-right: 20px;
+    }
+    .entryBox{
+        width: 80%;
+    }
+    .iBox{
+        justify-content: center;
+        border: 3px solid #E0FBE2;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    .mediadatebox{
+        display: block;
+        position: absolute;
+        padding: 0px 5px;
+        left: 5px;
+        top: -12px;
+        background-color: #112D4E;
+    }
+    .mediaDeleteButton{
+        display: block;
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        background-color: #E4003A;
+        border: solid 2px #E0FBE2;
+        color: #E0FBE2;
+        transition: background-color .3s, border .3s, color .3s;
+        cursor:pointer;
+    }
+    .mediaDeleteButton:hover{
+        background-color: #E0FBE2;
+        border:solid 2px #E4003A;
+        color: #E4003A;
+    }
+}
+@media(min-width:668px) and (max-width:900px){
+    .addButton{
+        margin-top: 10px;
+    }
+    .Sno,.deleteButton{
+        display: none;
+    }
+    .iBox{
+        justify-content:space-evenly;
+        border: 3px solid #E0FBE2;
+        position: relative;
+        margin-bottom: 1rem;
+        margin-right: 20px;
+    }
+    .mediadatebox{
+        padding-top: -1rem;
+    }
+    .mediaDeleteButton{
+        display: block;
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        background-color: #E4003A;
+        border: solid 2px #E0FBE2;
+        color: #E0FBE2;
+        transition: background-color .3s, border .3s, color .3s;
+        cursor:pointer;  
+    }
+    .mediaDeleteButton:hover{
+        background-color: #E0FBE2;
+        border:solid 2px #E4003A;
+        color: #E4003A;
+    }
+}
