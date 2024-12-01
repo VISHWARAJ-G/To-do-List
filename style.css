@@ -5,35 +5,74 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-.addButton{
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    margin-right: 5px;
-}       
+}     
 .todoName{
     padding: 1.2rem 0rem 1.2rem 1rem;
     width: 45%;
 }
-.todoNamebox{
-    width: 286px;
-    overflow: hidden;   
-    display: flex;           
+.todoNamebox{   
+    display: flex;         
     justify-content: center; 
-    align-items: center;     
     text-align: center;  
 }
 .todoDate{
     padding: 1.1rem;
 }
-.iBox{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 1rem 0 1rem 0;
-    align-items: center;
-    font-size: 1.1rem;
+.breakline{
+    display: none;
 }
+.iBox{
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1.1rem;
+    border: 3px solid #E0FBE2;
+    position: relative;
+    box-sizing: border-box;
+}
+.datebox{
+    background-color: #112D4E;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 0px 5px;
+    position: absolute;
+    top: -12px;
+    left: 15px;
+}    
+.DeleteButton {
+    position: absolute;
+    top: -19px;
+    right: -19.5px;
+    background: linear-gradient(45deg, #E4003A, #FF6F61); /* Vibrant Red Aqua gradient */
+    border: 2px solid #E0FBE2; /* Soft contrasting border */
+    color: #E0FBE2; /* Light aqua text for contrast */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50%; /* Rounded button for a clean look */
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(228, 0, 58, 0.4); /* Subtle glow */
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+.DeleteButton:hover {
+    background: #E0FBE2;; /* Reverse gradient */
+    color: #E4003A; /* Vibrant red text on hover */
+    border: 2px solid #E4003A; /* Red border for hover effect */
+    box-shadow: 0 6px 10px rgba(255, 223, 220, 0.6); /* Enhanced glow */
+    transform: scale(1.1); /* Slight button enlargement on hover */
+}
+
+.DeleteButton:active {
+    transform: scale(0.95); /* Slight shrink for click effect */
+    box-shadow: 0 3px 7px rgba(228, 0, 58, 0.3); /* Dimmed glow */
+}
+
 .oBox{
     display: flex;
     flex-direction: column;
@@ -44,53 +83,62 @@ body{
     width: 60%;
     border: 5px solid;
     border-image: linear-gradient(45deg, #d4fc79, #96e6a1) 1;
-    padding: 1rem;
+    padding: 0rem 1.5rem;
     background-color: #112D4E;
     color: #F9F7F7;
 }
-.addButton{
-    background-color: #006769;
-    border: solid 2px #E0FBE2;
-    color: #F9F7F7;
-    border-radius: 1rem;
+.addButton {
+    background: linear-gradient(45deg, #28a745, #20c997); /* Bright Green Aqua gradient */
+    border: none;
+    border-radius: 10px;
+    color: #fff; /* Dark text for contrast */
+    font-size: 1.3rem; /* Bigger, bold text */
+    font-weight: 700; /* Make the text bold */
+    padding: 15px 25px; /* Comfortable padding */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Spaced-out text for elegance */
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color .3s, border .3s, color .3s;
+    box-shadow: 0 6px 15px rgba(0, 200, 150, 0.4); /* Subtle glow effect */
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    outline: none;
+    overflow: hidden;
 }
-.deleteButton{
-    padding:1rem 1.5rem;
-    font-size: 1.1rem;
-    background-color: #E4003A;
-    border: solid 2px #E0FBE2;
-    color: #E0FBE2;
-    border-radius: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color .3s, border .3s, color .3s;
+
+.addButton::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    transition: all 0.4s ease-in-out;
 }
-.addButton:hover{
-    background-color: #E0FBE2;
-    border: solid 2px #006769;
-    color: #006769;
+
+.addButton:hover::before {
+    top: -50%;
+    left: -50%;
 }
-.deleteButton:hover{
-    background-color: #E0FBE2;
-    border:solid 2px #E4003A;
-    color: #E4003A;
+
+.addButton:hover {
+    color: #ffeaa7; /* Darker navy-like color for hover */
+    background: linear-gradient(45deg, #20c997, #28a745); /* Reverse gradient */
+    transform: translateY(3px); /* Lift button */
+    box-shadow: 0 8px 20px rgba(0, 200, 150, 0.6); /* Enhanced glow */
+}
+
+.addButton:active {
+    transform: translateY(2px); /* Press effect */
+    box-shadow: 0 4px 10px rgba(0, 200, 150, 0.3); /* Dim glow */
 }
 h1{
     text-align: center;
-}
-.mediaDeleteButton,.mediadatebox,.breakline{
-    display: none;
 }
 @media (max-width:667px){
     .addButton{
         margin-top: 10px;
         margin-bottom: 10px;
-    }
-    .Sno,.deleteButton,.datebox{
-        display: none;
     }
     .todoName{
         width: 90%;
@@ -98,6 +146,7 @@ h1{
     }
     .todoDate{
         margin-right: 20px;
+        box-sizing: border-box;
     }
     .entryBox{
         width: 80%;
@@ -108,37 +157,10 @@ h1{
         position: relative;
         margin-bottom: 1rem;
     }
-    .mediadatebox{
-        display: block;
-        position: absolute;
-        padding: 0px 5px;
-        left: 5px;
-        top: -12px;
-        background-color: #112D4E;
-    }
-    .mediaDeleteButton{
-        display: block;
-        position: absolute;
-        top: -12px;
-        right: -10px;
-        background-color: #E4003A;
-        border: solid 2px #E0FBE2;
-        color: #E0FBE2;
-        transition: background-color .3s, border .3s, color .3s;
-        cursor:pointer;
-    }
-    .mediaDeleteButton:hover{
-        background-color: #E0FBE2;
-        border:solid 2px #E4003A;
-        color: #E4003A;
-    }
 }
 @media(min-width:668px) and (max-width:900px){
     .addButton{
         margin-top: 10px;
-    }
-    .Sno,.deleteButton{
-        display: none;
     }
     .iBox{
         justify-content:space-evenly;
@@ -146,24 +168,5 @@ h1{
         position: relative;
         margin-bottom: 1rem;
         margin-right: 20px;
-    }
-    .mediadatebox{
-        padding-top: -1rem;
-    }
-    .mediaDeleteButton{
-        display: block;
-        position: absolute;
-        top: -12px;
-        right: -10px;
-        background-color: #E4003A;
-        border: solid 2px #E0FBE2;
-        color: #E0FBE2;
-        transition: background-color .3s, border .3s, color .3s;
-        cursor:pointer;  
-    }
-    .mediaDeleteButton:hover{
-        background-color: #E0FBE2;
-        border:solid 2px #E4003A;
-        color: #E4003A;
     }
 }
