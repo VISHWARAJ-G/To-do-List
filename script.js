@@ -40,23 +40,14 @@ function show(){
     for (let i=0;i<todoArray.length;i++){
         result.innerHTML += `
         <div class="iBox">
-            <div class="mediadatebox">${dateArray[i]}</div>
-            <div class="Sno">${i+1}</div>
-            <div class="todoNamebox">${todoArray[i]}</div>
             <div class="datebox">${dateArray[i]}</div>
-            <button class="deleteButton" value="${i}">Delete</button>
-            <button class="mediaDeleteButton" value="${i}">X</button>
+            <div class="todoNamebox">${todoArray[i]}</div>
+            <button class="DeleteButton" value="${i}">X</button>
         </div>
         `;
     }
-    let deleteButtonArray = document.querySelectorAll('.deleteButton');
-    deleteButtonArray.forEach((value,index) => {
-        value.addEventListener('click',() => {
-            deleting(index);
-        })
-    })
-    let mediaDeleteArray = document.querySelectorAll('.mediaDeleteButton');
-    mediaDeleteArray.forEach((value,index) => {
+    let DeleteArray = document.querySelectorAll('.DeleteButton');
+    DeleteArray.forEach((value,index) => {
         value.addEventListener('click',() => {
             deleting(index);
         })
